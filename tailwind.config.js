@@ -3,15 +3,18 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        segoe: ["Segoe UI", "system-ui", "sans-serif"],
+      },
       keyframes: {
         wobble: {
           "0%, 100%": { transform: "rotate(0deg)" },
-          "25%": { transform: "rotate(-0.5deg)" },
-          "75%": { transform: "rotate(0.5deg)" },
+          "33%": { transform: "rotate(-0.3deg)" },
+          "66%": { transform: "rotate(0.3deg)" },
         },
       },
       animation: {
-        wobble: "wobble 0.3s ease-in-out",
+        wobble: "wobble 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
       },
       colors: {
         border: "hsl(var(--border))",
